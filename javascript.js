@@ -1,7 +1,6 @@
 
-// computerplay f() that returns randomly either rock, paper or scissors
-
-function computerplay() {
+// computerPlay() that returns randomly either rock, paper or scissors
+function computerPlay() {
     // Create array containing rock, paper and scissors
     const choice = ["rock", "paper", "scissors"];
 
@@ -14,47 +13,81 @@ function computerplay() {
 }
 
 
+// playRound(playerSelection, computerSelection) plays 1 round of rock paper scissors using user input and random generated computer choice
 function playRound(playerSelection, computerSelection) {
 
-    let playerSelection = prompt("Enter your choice for a game of rock - paper - scissors ?");
+    // Checking id playerSelection is valid
     playerSelection = playerSelection.toLowerCase();
     
-    if (playerSelection != 'rock' || playerSelection != 'paper' || playerSelection != 'scissors') {
+    if (!(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors')) {
         return alert('Invalid Choice, enter rock, paper or scissors');
-    }
-
-    let computerSelection = computerplay();
+    } 
 
     // Play Game of Rock Paper Scissors, comp vs user
     // return winner of game
     // Comp = User -> Draw
     if (computerSelection == playerSelection) {
-        return [0, "Draw, even stevens"];
+        return ["draw", "Draw, even stevens"];
     }
     // Comp = P + User = R -> Comp wins
-    else if (computerSelection = 'paper' && playerSelection == 'rock') {
-        return ["c", "You lose, paper beats rock!"]
+    else if (computerSelection == 'paper' && playerSelection == 'rock') {
+        return ["c", "You lose, paper beats rock!"];
     }
     // Comp = S + User = R -> User wins
-    else if (computerSelection = 'scissors' && playerSelection == 'rock') {
-        return ["u", "You win, keep it up!"]
+    else if (computerSelection == 'scissors' && playerSelection == 'rock') {
+        return ["u", "You win, keep it up!"];
     }
     // Comp = R + User = P -> User wins
-    else if (computerSelection = 'rock' && playerSelection == 'paper') {
-        return ["u", "You win, champion in the making!"]
+    else if (computerSelection == 'rock' && playerSelection == 'paper') {
+        return ["u", "You win, champion in the making!"];
     }
     // Comp = S + User = P -> Comp wins
-    else if (computerSelection = 'scissors' && playerSelection == 'paper') {
-        return ["c", "You lose, ohh no!"]
+    else if (computerSelection == 'scissors' && playerSelection == 'paper') {
+        return ["c", "You lose, ohh no!"];
     }
     // Comp = R + User = S -> Comp wins
-    else if (computerSelection = 'rock' && playerSelection == 'scissors') {
-        return ["c", "You lose, damn son!"]
+    else if (computerSelection == 'rock' && playerSelection == 'scissors') {
+        return ["c", "You lose, damn son!"];
     }
     // Comp = P + User = S -> Comp wins
-    else if (computerSelection = 'paper' && playerSelection == 'scissors') {
-        return ["u", "You win, ayyyoooo!"]
+    else if (computerSelection == 'paper' && playerSelection == 'scissors') {
+        return ["u", "You win, ayyyoooo!"];
     }
     
 }
 
+// game() plays 5 rounds of rock paper scissors with user and computer
+function game() {
+
+    // setup counters to track scores for 5 rounds
+    let playerCounter = 0;
+    let computerCounter = 0;
+
+    // Play 5 rounds of rock paper scissors
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Enter your choice of rock, paper or scissors?");
+        let computerSelection = computerPlay();
+
+        let round = playRound( playerSelection, computerSelection);
+
+        if (round[0] == "u") {
+            playerCounter ++;
+        }
+        else if (round[0] == "c") {
+            computerCounter ++;
+        }
+
+        console.log(round[1]);
+    }
+
+    // Return the final results after playing 5 rounds
+    if (playerCounter > computerCounter) {
+        return "You win!"
+    } else if (computerCounter > playerCounter) {
+        return "You lose!"
+    }
+    else {
+        return "Draw"
+    }
+    
+}
