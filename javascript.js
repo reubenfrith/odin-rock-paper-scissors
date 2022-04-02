@@ -16,13 +16,6 @@ function computerPlay() {
 // playRound(playerSelection, computerSelection) plays 1 round of rock paper scissors using user input and random generated computer choice
 function playRound(playerSelection, computerSelection) {
 
-    // Checking id playerSelection is valid
-    playerSelection = playerSelection.toLowerCase();
-    
-    if (!(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors')) {
-        return alert('Invalid Choice, enter rock, paper or scissors');
-    } 
-
     // Play Game of Rock Paper Scissors, comp vs user
     // return winner of game
     // Comp = User -> Draw
@@ -65,11 +58,26 @@ function game() {
 
     // Play 5 rounds of rock paper scissors
     for (let i = 0; i < 5; i++) {
+
+        // ask user to enter rock, paper or scissors
         let playerSelection = prompt("Enter your choice of rock, paper or scissors?");
+        playerSelection = playerSelection.toLowerCase();
+
+
+        // if user entered invalid input then force them to enter correct value for playerSelection
+        while (!(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors')) {
+            alert("Invalid input");
+            playerSelection = prompt("Enter your choice of rock, paper or scissors?");
+            playerSelection = playerSelection.toLowerCase();
+        } 
         let computerSelection = computerPlay();
 
+
+        // play one round of rock paper scissors
         let round = playRound( playerSelection, computerSelection);
 
+
+        // track results of each round by incrementing counter by 1
         if (round[0] == "u") {
             playerCounter ++;
         }
@@ -77,10 +85,11 @@ function game() {
             computerCounter ++;
         }
 
+        // return result for that round
         console.log(round[1]);
     }
 
-    // Return the final results after playing 5 rounds
+    // Return the final results after playing 5 rounds, did you lose or win?
     if (playerCounter > computerCounter) {
         return "You win!"
     } else if (computerCounter > playerCounter) {
