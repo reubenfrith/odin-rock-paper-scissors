@@ -14,13 +14,47 @@ function computerplay() {
 }
 
 
+function playRound(playerSelection, computerSelection) {
 
+    let playerSelection = prompt("Enter your choice for a game of rock - paper - scissors ?");
+    playerSelection = playerSelection.toLowerCase();
+    
+    if (playerSelection != 'rock' || playerSelection != 'paper' || playerSelection != 'scissors') {
+        return alert('Invalid Choice, enter rock, paper or scissors');
+    }
 
+    let computerSelection = computerplay();
 
+    // Play Game of Rock Paper Scissors, comp vs user
+    // return winner of game
+    // Comp = User -> Draw
+    if (computerSelection == playerSelection) {
+        return [0, "Draw, even stevens"];
+    }
+    // Comp = P + User = R -> Comp wins
+    else if (computerSelection = 'paper' && playerSelection == 'rock') {
+        return ["c", "You lose, paper beats rock!"]
+    }
+    // Comp = S + User = R -> User wins
+    else if (computerSelection = 'scissors' && playerSelection == 'rock') {
+        return ["u", "You win, keep it up!"]
+    }
+    // Comp = R + User = P -> User wins
+    else if (computerSelection = 'rock' && playerSelection == 'paper') {
+        return ["u", "You win, champion in the making!"]
+    }
+    // Comp = S + User = P -> Comp wins
+    else if (computerSelection = 'scissors' && playerSelection == 'paper') {
+        return ["c", "You lose, ohh no!"]
+    }
+    // Comp = R + User = S -> Comp wins
+    else if (computerSelection = 'rock' && playerSelection == 'scissors') {
+        return ["c", "You lose, damn son!"]
+    }
+    // Comp = P + User = S -> Comp wins
+    else if (computerSelection = 'paper' && playerSelection == 'scissors') {
+        return ["u", "You win, ayyyoooo!"]
+    }
+    
+}
 
-
-
-//Write a function that plays a single round of Rock Paper Scissors. 
-//The function should take two parameters - the playerSelection and computerSelection - 
-//and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
-//Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation).
