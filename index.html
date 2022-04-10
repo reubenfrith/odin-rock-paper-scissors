@@ -6,12 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
+
+    <link rel="stylesheet" href="styles.css"> 
+
+    <!-- Fonts from google -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
 
 </head>
 <body>
-    
+    <h1>
+        Let's Play a game!
+    </h1>
 
+    <div class="images">
+
+        <div class="rock">
+        <img src="https://cdn.shopify.com/s/files/1/0094/8142/0858/products/TheRock_2400x.png?v=1572195311" alt="Dwayne Johnson's Head">
+        <span>Rock</span>
+        </div>
+
+        <div class="paper">
+        <img src="paper.png" alt="paper">
+        <span>Paper</span>
+        </div>
+
+        <div class="scissors">
+        <img src="scissors.png" alt="Scissors">
+        <span>Scissors</span>
+        </div>
+    </div>
+
+    <h2>First to 5 wins,</h2>
+    <div class="score">
+        <div class="you">
+        <span>You</span>
+        <div class="yourscore">2</div>
+        </div>
+
+        <div class="computer">
+        <span>Computer</span>
+        <div class="computerscore">2</div>
+        </div>
+
+    </div>
+
+    <button class="restart">Restart</button>
 
 </body>
 </html>
