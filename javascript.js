@@ -56,9 +56,9 @@ function game() {
     let playerCounter = 0;
     let computerCounter = 0;
 
-    //let i = 0; i < 5; i++
+    
 
-    // Play 5 rounds of rock paper scissors
+    // Play first to 5 rock paper scissors
     while (playerCounter < 5 && computerCounter < 5) {
 
         // ask user to enter rock, paper or scissors
@@ -103,3 +103,12 @@ function game() {
     
 }
 
+
+// Restart button function, reloads index.html
+const restartButton = document.querySelector('.restart');
+
+const restartGame = () => {
+    window.location.href= './index.html';
+}
+
+restartButton.addEventListener('click', restartGame)
