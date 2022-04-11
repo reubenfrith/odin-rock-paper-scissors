@@ -36,7 +36,7 @@ h1 {
 }
 
 .images button:hover {
-    border: solid black;
+    transform: scale(1.2);
     padding: 2rem;
 }
 
@@ -98,3 +98,23 @@ h2 {
     color: white;
 }
 
+.result_page {
+    font-family: 'Bebas Neue', Arial;
+    font-size: 20rem;
+	transform: scale(1);
+	animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(0.9);
+	}
+}

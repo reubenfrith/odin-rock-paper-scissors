@@ -56,8 +56,10 @@ function game() {
     let playerCounter = 0;
     let computerCounter = 0;
 
+    //let i = 0; i < 5; i++
+
     // Play 5 rounds of rock paper scissors
-    for (let i = 0; i < 5; i++) {
+    while (playerCounter < 5 && computerCounter < 5) {
 
         // ask user to enter rock, paper or scissors
         let playerSelection = prompt("Enter your choice of rock, paper or scissors?");
@@ -91,12 +93,13 @@ function game() {
 
     // Return the final results after playing 5 rounds, did you lose or win?
     if (playerCounter > computerCounter) {
-        return "You win!"
+        return window.location.href= './result.html'
     } else if (computerCounter > playerCounter) {
-        return "You lose!"
+        return 'Loser'
     }
     else {
         return "Draw"
     }
     
 }
+
