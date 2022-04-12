@@ -20,7 +20,7 @@ h1 {
     gap: 4rem;
 }
 
-.rock, .paper, .scissors {
+#rock, #paper, #scissors {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -40,17 +40,17 @@ h1 {
     padding: 2rem;
 }
 
-.rock img {
+#rock img {
    width: calc(1.574*12rem);
    height: calc(1.89*12rem);
 }
 
-.paper img{
+#paper img{
     width: 21rem;
     height: 21rem;
 }
 
-.scissors img {
+#scissors img {
     width: 21rem;
     height: 21rem;
 }

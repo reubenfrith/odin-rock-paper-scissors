@@ -49,59 +49,71 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
+window.onload = game()
+
 // game() plays 5 rounds of rock paper scissors with user and computer
 function game() {
 
     // setup counters to track scores for 5 rounds
-    let playerCounter = 0;
-    let computerCounter = 0;
+   // let playerCounter = 0;
+   // let computerCounter = 0;
 
     
 
     // Play first to 5 rock paper scissors
-    while (playerCounter < 5 && computerCounter < 5) {
+   // while (playerCounter < 5 && computerCounter < 5) {
 
         // ask user to enter rock, paper or scissors
-        let playerSelection = prompt("Enter your choice of rock, paper or scissors?");
-        playerSelection = playerSelection.toLowerCase();
+        let playerSelection;
+
+       
+        const btns = document.querySelector('.playerOption');
+
+       
+        btns.forEach(btn => btn.onclick = () =>  btn.id);
+        
+       console.log(playerSelection);
+       // playerSelection = playerSelection.toLowerCase();
 
 
         // if user entered invalid input then force them to enter correct value for playerSelection
-        while (!(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors')) {
-            alert("Invalid input");
-            playerSelection = prompt("Enter your choice of rock, paper or scissors?");
-            playerSelection = playerSelection.toLowerCase();
-        } 
-        let computerSelection = computerPlay();
+       // while (!(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors')) {
+            //alert("Invalid input");
+           // playerSelection = prompt("Enter your choice of rock, paper or scissors?");
+           // playerSelection = playerSelection.toLowerCase();
+        //} 
+
+        //let computerSelection = computerPlay();
 
 
         // play one round of rock paper scissors
-        let round = playRound( playerSelection, computerSelection);
+        //let round = playRound( playerSelection, computerSelection);
 
 
         // track results of each round by incrementing counter by 1
-        if (round[0] == "u") {
-            playerCounter ++;
-        }
-        else if (round[0] == "c") {
-            computerCounter ++;
-        }
+       // if (round[0] == "u") {
+      //      playerCounter ++;
+      //  }
+     //  else if (round[0] == "c") {
+     //      computerCounter ++;
+     //  }
 
         // return result for that round
-        console.log(round[1]);
+        
+        return playerSelection
     }
 
     // Return the final results after playing 5 rounds, did you lose or win?
-    if (playerCounter > computerCounter) {
-        return window.location.href= './result.html'
-    } else if (computerCounter > playerCounter) {
-        return 'Loser'
-    }
-    else {
-        return "Draw"
-    }
+   // if (playerCounter > computerCounter) {
+ //       return 0//window.location.href= './result.html'
+  //  } else if (computerCounter > playerCounter) {
+  //      return 'Loser'
+ //   }
+  //  else {
+  //      return "Draw"
+  //  }
     
-}
+//}
 
 
 // Restart button function, reloads index.html
