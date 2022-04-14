@@ -1,3 +1,13 @@
+// load game function when page loads
+document.onload = game()
+
+// Restart button function, reloads index.html
+const restartButton = document.querySelector('.restart');
+
+const restartGame = () => {
+    window.location.href= './index.html';
+}
+restartButton.addEventListener('click', restartGame);
 
 // computerPlay() that returns randomly either rock, paper or scissors
 function computerPlay() {
@@ -11,7 +21,6 @@ function computerPlay() {
     return randomElement;
 
 }
-
 
 // playRound(playerSelection, computerSelection) plays 1 round of rock paper scissors using user input and random generated computer choice
 function playRound(playerSelection, computerSelection) {
@@ -48,9 +57,6 @@ function playRound(playerSelection, computerSelection) {
     }
     
 }
-
-// load game function when page loads
-document.onload = game()
 
 function game() {
 
@@ -99,16 +105,3 @@ function game() {
         }
     
 }
-
-
-
-
-
-// Restart button function, reloads index.html
-const restartButton = document.querySelector('.restart');
-
-const restartGame = () => {
-    window.location.href= './index.html';
-}
-
-restartButton.addEventListener('click', restartGame);
