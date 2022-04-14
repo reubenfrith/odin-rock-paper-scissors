@@ -8,4 +8,4 @@ This is built using JavaScript, HTML and CSS.
 
 Everything is loaded on the client side. Simple and easy.
 
-Have a Try [click here](https://learner1unknown.github.io/odin-rock-paper-scissors/index.html)
+Have a try [click here!](https://learner1unknown.github.io/odin-rock-paper-scissors/index.html)
