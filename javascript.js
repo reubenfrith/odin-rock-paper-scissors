@@ -49,71 +49,59 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-window.onload = game()
+// load game function when page loads
+document.onload = game()
 
-// game() plays 5 rounds of rock paper scissors with user and computer
 function game() {
 
-    // setup counters to track scores for 5 rounds
-   // let playerCounter = 0;
-   // let computerCounter = 0;
-
+    // find the rock, paper, scissors buttons, the results and scoring
+    const btns = document.getElementsByClassName('playerOption');
+    const roundResult = document.querySelector('.results');
+    const yourScore = document.querySelector('.yourscore');
+    const computerScore = document.querySelector('.computerscore');
     
 
-    // Play first to 5 rock paper scissors
-   // while (playerCounter < 5 && computerCounter < 5) {
-
-        // ask user to enter rock, paper or scissors
-        let playerSelection;
-
-       
-        const btns = document.querySelector('.playerOption');
-
-       
-        btns.forEach(btn => btn.onclick = () =>  btn.id);
-        
-       console.log(playerSelection);
-       // playerSelection = playerSelection.toLowerCase();
-
-
-        // if user entered invalid input then force them to enter correct value for playerSelection
-       // while (!(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors')) {
-            //alert("Invalid input");
-           // playerSelection = prompt("Enter your choice of rock, paper or scissors?");
-           // playerSelection = playerSelection.toLowerCase();
-        //} 
-
-        //let computerSelection = computerPlay();
-
-
-        // play one round of rock paper scissors
-        //let round = playRound( playerSelection, computerSelection);
-
-
-        // track results of each round by incrementing counter by 1
-       // if (round[0] == "u") {
-      //      playerCounter ++;
-      //  }
-     //  else if (round[0] == "c") {
-     //      computerCounter ++;
-     //  }
-
-        // return result for that round
-        
-        return playerSelection
-    }
-
-    // Return the final results after playing 5 rounds, did you lose or win?
-   // if (playerCounter > computerCounter) {
- //       return 0//window.location.href= './result.html'
-  //  } else if (computerCounter > playerCounter) {
-  //      return 'Loser'
- //   }
-  //  else {
-  //      return "Draw"
-  //  }
+    // track scores
+    let playerCounter = 0;
+    let computerCounter = 0;
     
-//}
+
+        for(var i=0; i<btns.length; i++){
+            btns[i].addEventListener("click", function() {
+                
+                // button pressed is the players choice, Computer choices randomly
+                let playerSelection = this.id;
+                let computerSelection = computerPlay();
+
+                let round = playRound(playerSelection, computerSelection);
+                
+                // increment score for winner by 1, if winner is chosen (i.e. score = 5 or greater) load winning or loosing page
+                if (round[0] == "u") {
+                    playerCounter ++;
+                    if (playerCounter >= 5) {
+                        window.location.href= './win.html';
+                    }
+                }
+                else if (round[0] == "c") {
+                    computerCounter ++;
+                    if (computerCounter >= 5) {
+                        window.location.href= './lose.html';
+                    }
+                }
+
+                // update text shown for the came
+                roundResult.textContent = round[1];
+                yourScore.textContent = playerCounter;
+                computerScore.textContent = computerCounter;          
+
+            })
+
+        }
+    
+}
+
+
+
 
 
 // Restart button function, reloads index.html
@@ -123,4 +111,4 @@ const restartGame = () => {
     window.location.href= './index.html';
 }
 
-restartButton.addEventListener('click', restartGame)
+restartButton.addEventListener('click', restartGame);
