@@ -53,18 +53,23 @@ h1 {
 }
 
 #rock img {
-   width: calc(1.574*12rem);
-   height: calc(1.89*12rem);
+   width: calc(1.574*6rem);
+   height: calc(1.89*6rem);
 }
 
 #paper img{
-    width: 21rem;
-    height: 21rem;
+    width: 11.5rem;
+    height: 11.5rem;
 }
 
 #scissors img {
-    width: 21rem;
-    height: 21rem;
+    width: 11.5rem;
+    height: 11.5rem;
+}
+
+.computer_image, .player_image {
+    width: calc(1.574*6rem);
+    height: calc(1.89*6rem);
 }
 
 h2 {

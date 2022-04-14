@@ -25,6 +25,9 @@ function computerPlay() {
 // playRound(playerSelection, computerSelection) plays 1 round of rock paper scissors using user input and random generated computer choice
 function playRound(playerSelection, computerSelection) {
 
+    document.querySelector('.player_image').src = `./images/${playerSelection}.png` ;
+    document.querySelector('.computer_image').src = `./images/${computerSelection}.png` ;
+
     // Play Game of Rock Paper Scissors, comp vs user
     // return winner of game
     // Comp = User -> Draw
