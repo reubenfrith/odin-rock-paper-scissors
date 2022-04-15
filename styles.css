@@ -67,6 +67,11 @@ h1 {
     height: 11.5rem;
 }
 
+.octocat {
+    width: 2rem;
+    height: 2rem;
+}
+
 .computer_image, .player_image {
     width: calc(1.574*6rem);
     height: calc(1.89*6rem);
