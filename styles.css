@@ -20,6 +20,11 @@ body {
     gap: 0.5rem;
 }
 
+.me {
+    font-family: Arial;
+    font-size: 1rem;
+}
+
 h1 {
     font-family: 'Bebas Neue', Arial;
     font-size: 5rem;
